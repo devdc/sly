@@ -213,7 +213,9 @@
 					var itemSize = round(o.horizontal ? rect.width || rect.right - rect.left : rect.height || rect.bottom - rect.top);
 					var itemMarginStart = getPx($item, o.horizontal ? 'marginLeft' : 'marginTop');
 					var itemMarginEnd = getPx($item, o.horizontal ? 'marginRight' : 'marginBottom');
-					var itemSizeFull = itemSize + itemMarginStart + itemMarginEnd;
+					var itemPaddingStart = getPx($item, o.horizontal ? 'paddingLeft' : 'paddingTop') / 2;
+					var itemPaddingEnd = getPx($item, o.horizontal ? 'paddingRight' : 'paddingBottom') / 2;
+					var itemSizeFull = itemSize + itemMarginStart + itemMarginEnd + itemPaddingStart + itemPaddingEnd;
 					var singleSpaced = !itemMarginStart || !itemMarginEnd;
 					var item = {};
 					item.el = element;
